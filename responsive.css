@@ -1,0 +1,613 @@
+@media only screen and (max-width: 995px) {
+	.structure{
+	width:768px;
+	transition: all 0.9s ease 0s;
+	-moz-transition: all 0.9s ease 0s;
+	-webkit-transition: all 0.9s ease 0s;
+	-o-transition: all 0.9s ease 0s;
+
+	}
+	.structure_next{
+	width:768px;
+	transition: all 0.9s ease 0s;
+	-moz-transition: all 0.9s ease 0s;
+	-webkit-transition: all 0.9s ease 0s;
+	-o-transition: all 0.9s ease 0s;
+	}
+.heading_section {
+  background: none;
+  height: auto;
+  width: 100%;
+}
+.logo_box {
+  text-align: center;
+}
+.heading_bottom {
+  background:none;
+  height:auto;
+  width: 100%;
+}
+.link_box {
+  display:block;
+  margin-left:0px;
+  padding-top: 12px;
+  padding:10px 0;
+  text-align:center;
+}
+.menu_box {
+  background: none repeat scroll 0 0 #007DA8;
+  display: block;
+  padding: 10px 0;
+}
+#menu-top {
+  display: block;
+  text-align:center;
+}
+.searchbox-top2 {
+  height: 27px;
+  position: relative !important;
+  left:0px;
+  top: 0;
+  z-index: 18;
+  margin-left:0px !important;
+  width:100% !important;
+  text-align:center;
+  display:block !important;
+}
+.searchbox-top2 a {
+  float: none;
+
+}
+/*----------nav style---------*/
+ nav ul{ display: none; }
+nav select {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+  height: 28px;
+  margin: 0 auto !important;
+  width: 90%;
+}
+  /* code for nav end */
+.facebook_twitter {
+  left: 64%;
+  margin-left: 0;
+}
+.login_wrapper{
+	margin:25px auto;
+}
+.searchbox-top2{display:none !important;}
+.hide_on_mobile{display:none !important;}
+}
+
+@media only screen and (max-width: 770px) {
+.keyboardInputInitiator{display:none !important;}
+#bookcategorypages{margin-right:10px !important;}
+#bookcategorypages ul li{width:90% !important;}
+.b{width:90% !important;}
+.m1{width:100% !important; float:right !important;}
+.m2{width:100% !important; float:right !important;}
+.m1 p, .m2 p{ text-indent:0; margin:0; line-height:30px;}
+.m1 p{text-align:center !important;}
+.m2 p{text-align:center !important;}
+.b2 p{text-align:center !important;}
+.structure{
+  width:420px;
+  	transition: all 0.9s ease 0s;
+	-moz-transition: all 0.9s ease 0s;
+	-webkit-transition: all 0.9s ease 0s;
+	-o-transition: all 0.9s ease 0s;
+
+}
+	.structure_next{
+	width:420px;
+	transition: all 0.9s ease 0s;
+	-moz-transition: all 0.9s ease 0s;
+	-webkit-transition: all 0.9s ease 0s;
+	-o-transition: all 0.9s ease 0s;
+	}
+
+.poet_box {
+  width:400px;
+}
+.poet_bg{
+	width:150px;
+	height:148px;
+	margin:0 auto;
+}
+
+ul.poet_list li {
+  margin-right: 1%;
+  width: 48%;
+}
+.search_section{
+	padding-top:20px;
+	position:relative;
+	height:auto;
+	width:100%;
+}
+.advanced-search {
+  width:400px;
+  margin:0 auto;
+}
+.advanced-search .bottom {
+  display: none;
+
+}
+.advanced-search .top {
+  display: none;
+}
+.advanced-search .right {
+  display: none;
+}
+
+.advanced-search .left {
+  display: none;
+}
+.advanced-search .middle {
+  background-color: #406A7E;
+  background-image: url("../IMG/search-index-inner-bg.gif");
+  background-position: 0 77%;
+  background-repeat: no-repeat;
+  height: 282px;
+  padding-top: 20px;
+  vertical-align: top;
+  width: 400px;
+}
+#MAGGER {
+  left: 23%;
+  margin-left: 0;
+  position: absolute;
+  top: 172px;
+}
+#MAGGER{display:none !important;}
+.advanced-search .middle {
+  background-image:none !important;
+height:200px !important;
+}
+.advanced-search .labelinput {
+  margin-bottom: 10px;
+}
+.advanced-search input[type="text"] {
+  width: 148px;
+}
+.advanced-search .submitsearch {
+  margin-left: 138px;
+}
+.footer {
+  background:#98572F !important;
+  height: auto !important;
+}
+.copyright_text {
+  display: block;
+  width: 100% !important;
+}
+.copyright_text p {
+  display: block;
+  font-family: Tahoma;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 150%;
+  margin-left: 0;
+  margin-top: 10px;
+  text-align: center;
+}
+.footer_link {
+  display: block;
+  padding-bottom: 23px;
+  width: 100%;
+}
+.catboxfix{
+	width:390px;
+	}
+
+.guestbook-tip {
+  background-image: none;
+  	background-color:#d9edf3;
+	-moz-border-radius:50px;
+	border-radius:50px;
+	-webkit-border-radius:50px;
+	-o-border-radius:50px;
+	-ms-border-radius:50px;
+	-moz-box-shadow: 0px 0px 10px #000;
+	-webkit-box-shadow: 0px 0px 10px #000;
+	box-shadow: 0px 0px 10px #000;
+
+  background-repeat: no-repeat;
+  height:38px;
+  margin:10px auto 20px;
+  width:390px;
+}
+.TIPTEXT {
+  font-size: 10px;
+  margin:4px 5px 0;
+}
+#erase_mb{
+	display:none;
+}
+.bio_box {
+  width: 80%;
+}
+.mid_middle {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.facebook_twitter {
+  display: block;
+  left: 0;
+  margin-left: 0;
+  margin-top: 20px;
+  position: relative;
+  top: 0;
+}
+.poem_box {
+  margin: 20px auto;
+  width: 400px;
+}
+.poem_title h3 {
+  margin-right: 0;
+  text-align: center;
+}
+.poem_title_btm h3 {
+  margin-right: 0;
+  text-align: center;
+}
+#commentbox {
+  margin: 0 auto;
+  width: 78%;
+}
+#commentbox #loginreq {
+  width: 100%;
+}
+.review_boxes {
+  margin: 30px auto;
+  width: 78%;
+}
+.tab_box {
+  margin: 25px auto;
+  width: 390px;
+}
+.tab_one {
+  width: 97%;
+}
+.logouttop {
+  left: 15%;
+  margin-left: 0;
+}
+.logouttop {
+  left: 29%;
+  margin-left: 0;
+}
+.pagination_box{
+	margin-bottom:25px;
+}
+.profile_area {
+  margin: 20px auto;
+  width: 95%;
+}
+.avarter_image {
+  display: block;
+  height: 150px;
+  position: relative;
+  right:0px;
+  width: 150px;
+  margin: 0 auto 25px;
+}
+.adva_2 td{padding-bottom:15px;font-size:14px;}
+}
+
+@media only screen and (max-width: 479px) {
+#MAGGER{display:none !important;}
+.advanced-search .middle {
+  background-image:none !important;
+height:200px !important;
+}
+.keyboardInputInitiator{display:none !important;}
+#bookcategorypages{margin-right:10px !important;}
+#bookcategorypages ul li{width:90% !important;}
+
+.b{width:90% !important;}
+.m1{width:100% !important; float:right !important;}
+.m2{width:100% !important; float:right !important;}
+.m1 p, .m2 p{ text-indent:0; margin:0; line-height:30px;}
+.m1 p{text-align:center !important;}
+.m2 p{text-align:center !important;}
+.b2 p{text-align:center !important;}
+
+	.structure{
+	   width:300px;
+	   	transition: all 0.9s ease 0s;
+	-moz-transition: all 0.9s ease 0s;
+	-webkit-transition: all 0.9s ease 0s;
+	-o-transition: all 0.9s ease 0s;
+	}
+	.structure_next{
+	width:300px;
+	transition: all 0.9s ease 0s;
+	-moz-transition: all 0.9s ease 0s;
+	-webkit-transition: all 0.9s ease 0s;
+	-o-transition: all 0.9s ease 0s;
+	}
+	ul.poet_list li {
+  margin-right:0px;
+  width:100%;
+}
+.poet_box {
+  width:280px;
+}
+.adva_2{
+	width:280px;
+	height:auto;
+}
+
+.advanced-search {
+  width:280px;
+  margin:0 auto;
+}
+
+.advanced-search .middle {
+  height: 331px;
+  width: 280px;
+}
+.advanced-search .labelinput {
+  margin-bottom: 10px;
+}
+.keyboardInputInitiator {
+  cursor: pointer;
+  margin: 0 3px 8px;
+  vertical-align: middle;
+}
+.advanced-search select {
+  width: 142px;
+}
+.advanced-search input[type="text"] {
+  width: 140px;
+}
+.advanced-search .labelinput {
+  padding-right: 13px;
+}
+.advanced-search .middle {
+  background-position: 0 84%;
+}
+#MAGGER {
+  left: 33%;
+  margin-left: 0;
+  position: absolute;
+  top: 224px;
+}
+.advanced-search .submitsearch {
+  margin-left: 45px;
+}
+.catboxfix{
+	width:280px;
+	}
+.catboxfix .ttlimg {
+  display: block;
+  height: 98px;
+  width: 280px;
+}
+.catboxfix .headtitle {
+  display: block;
+  text-align: center;
+  width: 280px;
+  padding:10px 0 !important;
+}
+.catboxfix .deschead {
+  display: block;
+  float: none;
+  padding: 0px;
+  text-align: center;
+  width: 280px;
+}
+.catboxfix .fieldlabel {
+  padding: 5px 0;
+  text-align: right;
+  width: 140px;
+}
+.catboxfix .fieldlabel_text{
+  display: block;
+  text-align: center;
+  width: 280px;
+  padding:5px 0;
+
+}
+.catboxfix .split {
+  background-image: url("../IMG/split-hh-bg.JPG");
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: block;
+  height: 4px;
+  width: 280px;
+}
+.catboxfix .fielditem {
+  display: block;
+  float: left;
+  padding: 5px 0;
+  text-align: right;
+  width:55px;
+}
+.catboxfix textarea {
+  direction: rtl;
+  display: block;
+  font-family: Tahoma;
+  font-size: 11px;
+  text-align: right;
+  width: 140px;
+  height: 50px;
+}
+.catboxfix .textfield {
+  font-family: Tahoma;
+  font-size: 12px;
+  height: 20px;
+  width: 140px;
+}
+.catboxfix .full_size{
+	text-align:center;
+}
+.empty{
+	display:none !important;
+}
+.guestbook-tip {
+  background-image: none;
+  	background-color:#d9edf3;
+	-moz-border-radius:50px;
+	border-radius:50px;
+	-webkit-border-radius:50px;
+	-o-border-radius:50px;
+	-ms-border-radius:50px;
+	-moz-box-shadow: 0px 0px 10px #000;
+	-webkit-box-shadow: 0px 0px 10px #000;
+	box-shadow: 0px 0px 10px #000;
+
+  background-repeat: no-repeat;
+  height:38px;
+  margin: 0 auto;
+  width: 280px;
+}
+.TIPTEXT {
+  font-size: 10px;
+  margin:4px 5px 0;
+}
+#navbar-fix{
+	width:94%;
+}
+/*{
+	background-size:100% auto;
+	-moz-background-size:100%; 
+	-webkit-background-size:100%; 
+	background-size:100%;
+	-o-background-size:100%;
+	-ms-background-size:100%;
+}*/
+.poem_box {
+  margin: 20px auto;
+  width: 280px;
+}
+.login_wrapper{
+	width:280px;
+}
+.form_title img {
+  border-top-left-radius: 8px;
+  -moz- border-top-left-radius: 8px;
+  -webkit- border-top-left-radius: 8px;
+  -o- border-top-left-radius: 8px;
+  -ms- border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  -moz-border-top-right-radius: 8px;
+  -webkit-border-top-right-radius: 8px;
+  -o-border-top-right-radius: 8px;
+  -ms-border-top-right-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+#loginpanel .bottom {
+  background-position: center 70%;
+}
+.name {
+  display: block;
+  text-align: right;
+  width: 100%;
+}
+.email {
+  display: block;
+  padding: 10px 0;
+  text-align: right;
+  width: 100%;
+}
+.email input[type="text"] {
+  height: 23px;
+}
+.email textarea {
+  height: 148px;
+  width:100% !important;
+}
+.btn {
+  text-align: center !important;
+}
+.PROFILEMENU {
+  background-color: #B7CFF7;
+  background-image: none;
+  height: auto;
+  margin-bottom: 30px;
+}
+.PROFILEMENU ul {
+  padding: 18px 12px;
+}
+.PROFILEMENU li {
+  margin-bottom: 5px;
+}
+.tab_box {
+  margin: 25px auto;
+  width: 276px;
+}
+img.avarter {
+  display: block;
+  float: none;
+  margin: 10px auto;
+}
+.tab_title h3 {
+  display: block;
+  text-align: center;
+}
+.pic_submit {
+  display: block;
+  padding: 20px 0 0;
+  text-align: center;
+  width: 100%;
+}
+.alhad input[type="text"], .alhad input[type="password"] {
+  height: 23px;
+  width:100% !important;
+}
+.alhad select{
+  height: 23px;
+  width:100% !important;
+}
+.logouttop {
+  left: 15%;
+  margin-left: 0;
+}
+.poem_search_result{
+	width:280px;
+	margin:0 auto;
+	padding-top:50px;
+}
+.search-poem-lines {
+  width: 255px;
+}
+.profile_info_left {
+  margin-right: 0;
+  text-align: left;
+  width: 48%;
+}
+.searchbox-top2{display:none !important;}
+.hide_on_mobile{display:none !important;}
+.adva_2 td{padding-bottom:30px;font-size:14px;}
+}
+
+
+@media only screen and (max-width:320px) {
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (max-width: 995px)
+and (orientation : landscape) {
+.searchbox-top2{display:none !important;}
+.hide_on_mobile{display:none !important;}
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (max-width: 995px)
+and (orientation : portrait) {
+.searchbox-top2{display:none !important;}
+.hide_on_mobile{display:none !important;}
+}
+
+
+@media only screen and (max-width: 770px) {
+.keyboardInputInitiator{display:none !important;}
+}

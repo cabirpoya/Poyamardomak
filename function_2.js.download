@@ -1,0 +1,316 @@
+/*******************************************************************************************************/
+
+function showLikePeople(){
+
+$(strfirst).slideToggle("slow");
+
+
+}
+
+/*******************************************************************************************************/
+function likethis(getID){
+			$("#like-loader-"+getID).html('<img width="10" height="10" src="https://www.ganjnama.com/IMG/loader.gif" alt="" />');
+			$.post("https://www.ganjnama.com/like/1/"+getID+"/", {
+			}, function(response){
+			    if ( response == "" ) { window.location = 'https://www.ganjnama.com/login/' ; return false; }
+				$('#like-stats-'+getID).html(response);
+				rst = " onclick= \"unlikethis('" + getID + "'); \" ";
+				$('#like-panel-'+getID).html('<a ' + rst + ' href="javascript: void(0)" id="post_id'+getID+'" class="Unlike">( - ) Unlike</a>');
+				$("#like-loader-"+getID).html('');
+				if ( response == 1 ) {
+				window.setTimeout('location.reload()', 300);
+				}
+			});
+}
+/*******************************************************************************************************/
+function unlikethis(getID){
+			$("#like-loader-"+getID).html('<img width="10" height="10"  src="https://www.ganjnama.com/IMG/loader.gif" alt="" />');
+			$.post("https://www.ganjnama.com/like/0/"+getID+"/", {
+			}, function(response){
+			    if ( response == "" ) { window.location = 'https://www.ganjnama.com/login/' ; return false; }
+				$('#like-stats-'+getID).html(response);
+				rst = " onclick= \"likethis('" + getID + "'); \" ";
+				$('#like-panel-'+getID).html('<a  ' + rst + ' href="javascript: void(0)" id="post_id'+getID+'" class="LikeThis">( + ) Like</a>');
+				$("#like-loader-"+getID).html('');
+				if ( response == 0 ) {
+				window.setTimeout('location.reload()', 300);
+				}
+
+			});
+}
+/*******************************************************************************************************/
+$(function() {
+$(".submit").click(function() 
+{
+var comment = $("#comment").val();
+var post_id = $("#POEM_ID").val(); 
+var dataString = 'comment=' + comment+ '&POEM_ID=' + post_id;
+if(comment==''){
+alert('لطفا متن مورد نظر خود را وارد نمایید');
+}else{
+$("#comment").attr("disabled", "disabled");
+$("#flash").show();
+$("#flash").fadeIn(400).html('<img width="20" height="20"  src="https://www.ganjnama.com/IMG/loader.gif" alt="" />');
+$.ajax({
+type: "POST",
+url: "https://www.ganjnama.com/submitcomment/",
+data: dataString,
+cache: false,
+success: function(html){
+if ( html == "" ) { window.location = 'https://www.ganjnama.com/login/' ; return false; }
+$("ol#update").append(html);
+$("ol#update li:last").fadeIn("slow");
+$("#flash").hide();
+$("#comment").val("");
+$('#comment').removeAttr('disabled');
+}
+});
+}return false;
+}); });
+/*******************************************************************************************************/
+$(function() { $(".lavaLamp").lavaLamp({ fx: "backout", speed: 700 })});
+/*******************************************************************************************************/
+		$(document).ready(function(){
+			/*menuYloc = parseInt($("#sidebar").css("top").substring(0,$("#sidebar").css("top").indexOf("px")))
+			$(window).scroll(function () { 
+				offset = menuYloc+$(document).scrollTop()+"px";
+				$("#sidebar").animate({top:offset},{duration:500,queue:false});
+			});*/
+		}); 
+/*******************************************************************************************************/
+		$(document).ready(function(){
+						   $("#sidebar").hover(function(){
+						   var leftitem = $(this).css("left");
+						if ( leftitem == "-234px" ) { $(this).animate({left: -3},600);} 
+						   },function(){
+						  $(this).animate({left: -234},600);
+						   });
+						   });
+/*******************************************************************************************************/
+function goToByScroll(id){
+$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
+var opt = 0 ;
+for(i=1;i<=10;i++){
+$("#"+id).animate({opacity: opt }, 'normal');
+if(opt == 0 ) { opt = 1 ; }else{ opt = 0 ; }
+}
+}
+/*******************************************************************************************************/
+var scrolltotop={
+	setting: {startline:100, scrollto: 0, scrollduration:400, fadeduration:[500, 100]},
+	controlHTML: '<img src="https://www.ganjnama.com/IMG/up.png" alt="up" style="width:48px; height:48px" />', 
+	controlattrs: {offsetx:5, offsety:5}, 
+	anchorkeyword: '#top', 
+	state: {isvisible:false, shouldvisible:false},
+	scrollup:function(){
+		if (!this.cssfixedsupport) 
+		this.$control.css({opacity:0})
+		var dest=isNaN(this.setting.scrollto)? this.setting.scrollto : parseInt(this.setting.scrollto)
+		if (typeof dest=="string" && jQuery('#'+dest).length==1)
+			dest=jQuery('#'+dest).offset().top
+		else
+			dest=0
+		this.$body.animate({scrollTop: dest}, this.setting.scrollduration);
+	},
+
+	keepfixed:function(){
+		var $window=jQuery(window)
+		var controlx=$window.scrollLeft() + $window.width() - this.$control.width() - this.controlattrs.offsetx
+		var controly=$window.scrollTop() + $window.height() - this.$control.height() - this.controlattrs.offsety
+		this.$control.css({left:controlx+'px', top:controly+'px'})
+	},
+
+	togglecontrol:function(){
+		var scrolltop=jQuery(window).scrollTop()
+		if (!this.cssfixedsupport)
+			this.keepfixed()
+		this.state.shouldvisible=(scrolltop>=this.setting.startline)? true : false
+		if (this.state.shouldvisible && !this.state.isvisible){
+			this.$control.stop().animate({opacity:1}, this.setting.fadeduration[0])
+			this.state.isvisible=true
+		}
+		else if (this.state.shouldvisible==false && this.state.isvisible){
+			this.$control.stop().animate({opacity:0}, this.setting.fadeduration[1])
+			this.state.isvisible=false
+		}
+	},
+	
+	init:function(){
+		jQuery(document).ready(function($){
+			var mainobj=scrolltotop
+			var iebrws=document.all
+			mainobj.cssfixedsupport=!iebrws || iebrws && document.compatMode=="CSS1Compat" && window.XMLHttpRequest
+			mainobj.$body=(window.opera)? (document.compatMode=="CSS1Compat"? $('html') : $('body')) : $('html,body')
+			mainobj.$control=$('<div id="topcontrol">'+mainobj.controlHTML+'</div>')
+				.css({position:mainobj.cssfixedsupport? 'fixed' : 'absolute', bottom:mainobj.controlattrs.offsety, right:mainobj.controlattrs.offsetx, opacity:0, cursor:'pointer'})
+				.attr({title:'برو به بالای صفحه'})
+				.click(function(){mainobj.scrollup(); return false})
+				.appendTo('body')
+			if (document.all && !window.XMLHttpRequest && mainobj.$control.text()!='') 
+				mainobj.$control.css({width:mainobj.$control.width()})
+			mainobj.togglecontrol()
+			$('a[href="' + mainobj.anchorkeyword +'"]').click(function(){
+				mainobj.scrollup()
+				return false
+			})
+			$(window).bind('scroll resize', function(e){
+				mainobj.togglecontrol()
+			})
+		})
+	}
+}
+
+scrolltotop.init()
+/*******************************************************************************************************/
+function getopacity(elem) {
+  var ori = $(elem).css('opacity');
+  var ori2 = $(elem).css('filter');
+  if (ori2) {
+    ori2 = parseInt( ori2.replace(')','').replace('alpha(opacity=','') ) / 100;
+    if (!isNaN(ori2) && ori2 != '') {
+      ori = ori2;
+    }
+  }
+  return ori;
+}
+/*******************************************************************************************************/
+$(document).ready(function(){
+	$('.zitem').hover(function() {
+	var currentopacity = getopacity( $(this).find('img.avatarsh') );
+	if ( currentopacity  == 0.5 ) {
+	 $(this).find('img.avatarsh').fadeTo("fast", 1);
+	 }
+	},
+	function() {
+	    $(this).find('img.avatarsh').fadeTo("fast", 0.5);
+	});
+	
+});
+/*******************************************************************************************************/
+function addtitle(elem,title){
+$(elem).attr("title",title);
+}
+/*******************************************************************************************************/
+function reloadcaptcha(){
+var date = new Date();
+var img_src = "https://www.ganjnama.com/captcha-register/" +  date.getTime() + "/";
+$("#captchaimg").attr('src',img_src);
+}
+
+
+function registersteps(){
+var curid = "#STEP1";
+var emailReg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i
+var letterandnumber =  /^[a-z0-9\-_]+$/i
+
+var emailerror = "لطفا یک پست الکترونیک معتبر وارد فرمایید";
+var usernameerror = "لطفا نام کاربری خود را با حروف انگلیسی ، اعداد ، -  و _ انتخاب فرمایید";
+var usernameLENGTHerror = "لطفا نام کاربری خود را وارد فرمایید ، حداقل 5 کاراکتر";
+var nameerror = "لطفا نام خود را وارد فرمایید";
+var passworderrorlength = "گذرواژه شما میبایست حداقل 6 کاراکتر باشد";
+var passwordnotmatch = "گذرواژه شما با تاییدیه آن یکسان نمی باشد";
+var notavailableUsername = "با عرض پوزش ، امکان ساختن این نام کاربری وجود ندارد";
+var invalidcaptchaerror  = "کد امنیتی اشتباه وارد شده است";
+
+
+var errormsg = "";
+var userav = "";
+
+
+var name = $('#name');
+var email = $('#email');
+var username =  $('#username');
+var password =  $('#password');
+var passwordconfirm =  $('#confirmpassword');
+var captcha = $('#captcha');
+var acceptrules =  $('#acceptrules');
+
+
+var namelength = $("#name").val().length;
+var emaillength =  $("#email").val().length;
+var usernamelength =  $("#username").val().length;
+var passwordlength =  $("#password").val().length;
+
+
+var STRpassword = password.val();
+var STRpasswordconfirm = passwordconfirm.val();
+var CHECKSTRusername = "username=" + username.val();
+var CheckSTRCaptcha  = "captcha=" + captcha.val();
+var acceptrulesCHECK = acceptrules.attr('checked');
+
+
+$(curid).find('input.buttonstep').attr("disabled", "true");
+$(curid).fadeTo("fast", 0.2);
+$("body").prepend('<div id="LOADINGSTEP" style="z-index:999;width:100px;height:100px;position:absolute;left:50%;top:550px;text-align:center;vertical-align:middle;margin-left:-50px;"><img src="https://www.ganjnama.com/IMG/loader.gif" border="0"></div>')
+
+
+if(!emailReg.test( email.val() )) { email.addClass("suberrorfield"); errormsg = emailerror ; setfocus = email ; addtitle(setfocus ,errormsg );  }else{ email.removeClass("suberrorfield"); addtitle(email,null); }
+if ( STRpassword  != STRpasswordconfirm  )  { passwordconfirm.addClass("suberrorfield"); errormsg =  passwordnotmatch; addtitle(setfocus ,errormsg );  setfocus = passwordconfirm; }else{ passwordconfirm.removeClass("suberrorfield"); addtitle(passwordconfirm,null);  }
+if ( passwordlength < 6 ) { password.addClass("suberrorfield"); errormsg =  passworderrorlength ; setfocus = password; addtitle(setfocus ,errormsg );  }else{ password.removeClass("suberrorfield"); addtitle(password,null); }
+if(!letterandnumber.test( username.val() )) { username.addClass("suberrorfield"); errormsg = usernameerror   ; setfocus = username; addtitle(setfocus ,errormsg );  }else{ username.removeClass("suberrorfield"); addtitle(username,null); }
+if ( usernamelength < 5 ) { username.addClass("suberrorfield"); errormsg =  usernameLENGTHerror ; setfocus = username; addtitle(setfocus ,errormsg );  }else{ username.removeClass("suberrorfield"); addtitle(username,null); }
+if ( namelength < 3 ) { name.addClass("suberrorfield"); errormsg =  nameerror   ; setfocus = name; addtitle(setfocus ,errormsg );  }else{ name.removeClass("suberrorfield"); addtitle(name,null); }
+
+
+
+if( errormsg == "" ) {
+$.ajax({
+  url: "https://www.ganjnama.com/checkusername/",
+  type: "POST",
+  async: false,
+  data: CHECKSTRusername ,
+  contentType: "application/json; charset=utf-8",
+    dataType: "json", // Expecting JSON response
+  success: function(data){
+if ( data != "OK" ) { username.addClass("suberrorfield"); errormsg =  notavailableUsername ; setfocus = username; addtitle(setfocus ,errormsg );  }else{ username.removeClass("suberrorfield"); addtitle(username,null);  }
+}
+});
+}
+
+
+if( errormsg == "" ) {
+$.ajax({
+  url: "http://www.ganjnama.com/SignupCaptcha/",
+  type: "POST",
+  async: false,
+  data: CheckSTRCaptcha ,
+  success: function(data){
+if ( data != "OK" ) { captcha.addClass("suberrorfield"); errormsg =  invalidcaptchaerror ; setfocus = captcha; addtitle(setfocus ,errormsg );  }else{ captcha.removeClass("suberrorfield"); addtitle(captcha,null);  }
+}
+});
+}
+
+
+
+if( errormsg == "" ) {
+if ( acceptrulesCHECK  == false ) { acceptrules.addClass("suberrorfield"); errormsg = "notaccepted" ; setfocus = acceptrules ; }else{  acceptrules.removeClass("suberrorfield");  }
+}
+
+
+
+
+if ( errormsg  != "" ) {
+
+$("#LOADINGSTEP").remove();
+
+
+$(curid).fadeTo("fast",1);
+$(curid).find('input.buttonstep').attr("disabled", "");
+$(setfocus).focus();
+
+
+
+
+
+}else{
+$("#LOADINGSTEP").remove();
+$(curid).fadeTo("fast",1);
+
+$("form#signupform").submit();
+
+
+}
+
+
+}
+/*******************************************************************************************************/
